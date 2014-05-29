@@ -55,7 +55,7 @@ function encode( x, len )
     -- pad with zeroes, also output at least one zero
     len = len or 1
     bytes = bytes .. string.rep("\0", len - #bytes)
-    return bytes
+    return string.reverse( bytes )
 end
 
 -- --------------------------------------------------------------------- >>>

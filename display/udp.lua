@@ -3,7 +3,7 @@
 
 -- dependencies <<<
 
-require "luarocks.loader"
+pcall( require, "luarocks.loader" )
 
 local require   = require
 local display   = require "display"
@@ -269,12 +269,12 @@ function fungfx(f,...)
     local v1height = display.config.vpixels + 8
     -- iterate over lines
     for y = 1, display.config.vheight do
-        if ((y-1) % v1height) < 8 then
             for x = 1, display.config.width_txt do
                 local byte = 0
                 for lx = 1, 8 do
                     byte = byte*2 + (f(x*8+lx, y, ...) and 1 or 0)
                 end
+        if ((y-1) % v1height) < 8 then
                 table.insert(img, string.char(byte))
             end
         end

@@ -245,7 +245,7 @@ math.randomseed(os.time())
 -- set display dimensions
 setwidth(56)                        -- display width in characters
 setheight(20)                       -- display height in characters
-setvpixels(3)                       -- virtual pixels between lines
+setvpixels(4)                       -- virtual pixels between lines
 
 -- udp socket parameters
 socket_ip       = "172.23.42.29"    -- IP of display
